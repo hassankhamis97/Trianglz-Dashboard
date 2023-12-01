@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Trianglz Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -12,7 +12,9 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+  <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
@@ -29,6 +31,7 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="leads.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -59,17 +62,17 @@
           </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <span class="dropdown-item dropdown-header">7 Notifications</span>
-            <div class="dropdown-divider"></div>
+
             <a href="#" class="dropdown-item">
               <i class="fas fa-envelope mr-2"></i> 4 new Leads
               <span class="float-right text-muted text-sm">3 mins</span>
             </a>
-            <div class="dropdown-divider"></div>
+
             <a href="#" class="dropdown-item">
               <i class="fas fa-file mr-2"></i> 3 new reports
               <span class="float-right text-muted text-sm">2 days</span>
             </a>
-            <div class="dropdown-divider"></div>
+
             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
           </div>
         </li>
@@ -105,7 +108,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="./index.html" class="nav-link active">
+              <a href="./index.html" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Analytic data
@@ -113,7 +116,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="./leads.html" class="nav-link">
+              <a href="./leads.html" class="nav-link active">
                 <i class="nav-icon fas fa-list-alt"></i>
                 <p>
                   Leads
@@ -736,7 +739,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Analytic data</h1>
+              <h1 class="m-0">Leads</h1>
             </div>
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -746,156 +749,205 @@
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
-          <!-- Date and time range -->
-          <div style="display: flex; justify-content: flex-end;">
 
-            <div class="form-group">
-
-              <div class="input-group">
-                <button type="button" class="btn btn-default float-right" id="daterange-btn">
-                  <i class="far fa-calendar-alt"></i> Last 30 Days
-                  <i class="fas fa-caret-down"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- Small boxes (Stat box) -->
-          <div class="row">
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box bg-info">
-                <div class="inner">
-                  <h3>20</h3>
-
-                  <p>To Do Leads</p>
-                </div>
-                <div class="icon">
-                  <i class="fas fa-list-alt"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box bg-warning">
-                <div class="inner">
-                  <h3>30</h3>
-
-                  <p>In Progress Leads</p>
-                </div>
-                <div class="icon">
-                  <i class="fas fa-hourglass-half"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box bg-success">
-                <div class="inner">
-                  <h3>50</h3>
-
-                  <p>Completed Requests</p>
-                </div>
-                <div class="icon">
-                  <i class="fas fa-check-circle"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box bg-danger">
-                <div class="inner">
-                  <h3>2</h3>
-
-                  <p>Not Completed Requests</p>
-                </div>
-                <div class="icon">
-                  <i class="fas fa-times-circle"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <!-- ./col -->
-          </div>
           <!-- /.col-md-6 -->
           <div class="col-lg-12">
+            <div style="display: flex; justify-content: space-between;">
+
+              <div class="form-group">
+                <div class="input-group input-group">
+                  <input type="search" class="form-control form-control" placeholder="Client Name ..." value="">
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn btn-default">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- /.card -->
+              <div class="form-group">
+                <select class="select2" multiple="multiple" data-placeholder="Select a Category" style="width: 100%;">
+                  <option>Health and Fitness</option>
+                  <option>Educational</option>
+                  <option>Food</option>
+                  <option>Shopping</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select class="select2" multiple="multiple" data-placeholder="Select a Status" style="width: 100%;">
+                  <option>TODO</option>
+                  <option>In Progress</option>
+                  <option>Completed</option>
+                  <option>Not Completed</option>
+                </select>
+              </div>
+
+            </div>
             <div class="card">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Leads</h3>
-                  <a href="javascript:void(0);">View Report</a>
-                </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th style="width: 60px">#</th>
+                      <th>Client name</th>
+                      <th>Client Job</th>
+                      <th>Business category</th>
+                      <th>Lead Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-href="lead-profile.html">
+                      <td>1.</td>
+                      <td>Ahmed Abdelhafiez</td>
+                      <td>
+                        Entrepreneur
+                      </td>
+                      <td>
+                        Health and Fitness
+                      </td>
+                      <td>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info btn-sm">TODO</button>
+                          <button type="button" class="btn btn-info dropdown-toggle dropdown-icon btn-sm"
+                            data-toggle="dropdown">
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" href="#">TODO</a>
+                            <a class="dropdown-item" href="#">In Progress</a>
+                            <a class="dropdown-item" href="#">Completed</a>
+                            <a class="dropdown-item" href="#">Not Completed</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr data-href="lead-profile.html">
+                      <td>2.</td>
+                      <td>Hassan Khamis</td>
+                      <td>
+                        Manager
+                      </td>
+                      <td>Educational</td>
+                      <td>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-warning btn-sm">In Progress</button>
+                          <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon btn-sm"
+                            data-toggle="dropdown">
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" href="#">TODO</a>
+                            <a class="dropdown-item" href="#">In Progress</a>
+                            <a class="dropdown-item" href="#">Completed</a>
+                            <a class="dropdown-item" href="#">Not Completed</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr data-href="lead-profile.html">
+                      <td>3.</td>
+                      <td>Hoda Amr</td>
+                      <td>
+                        Entrepreneur
+                      </td>
+                      <td>
+                        Health and Fitness
+                      </td>
+                      <td>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-danger btn-sm">Not Completed</button>
+                          <button type="button" class="btn btn-danger dropdown-toggle dropdown-icon btn-sm"
+                            data-toggle="dropdown">
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" href="#">TODO</a>
+                            <a class="dropdown-item" href="#">In Progress</a>
+                            <a class="dropdown-item" href="#">Completed</a>
+                            <a class="dropdown-item" href="#">Not Completed</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr data-href="lead-profile.html">
+                      <td>4.</td>
+                      <td>Magdy</td>
+                      <td>
+                        Manager
+                      </td>
+                      <td>Educational</td>
+                      <td>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-success btn-sm">Completed</button>
+                          <button type="button" class="btn btn-success dropdown-toggle dropdown-icon btn-sm"
+                            data-toggle="dropdown">
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" href="#">TODO</a>
+                            <a class="dropdown-item" href="#">In Progress</a>
+                            <a class="dropdown-item" href="#">Completed</a>
+                            <a class="dropdown-item" href="#">Not Completed</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr data-href="lead-profile.html">
+                      <td>5.</td>
+                      <td>Nour Gweda</td>
+                      <td>
+                        Entrepreneur
+                      </td>
+                      <td>
+                        Health and Fitness
+                      </td>
+                      <td>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info btn-sm">TODO</button>
+                          <button type="button" class="btn btn-info dropdown-toggle dropdown-icon btn-sm"
+                            data-toggle="dropdown">
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" href="#">TODO</a>
+                            <a class="dropdown-item" href="#">In Progress</a>
+                            <a class="dropdown-item" href="#">Completed</a>
+                            <a class="dropdown-item" href="#">Not Completed</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr data-href="lead-profile.html">
+                      <td>6.</td>
+                      <td>Yara Magdy</td>
+                      <td>
+                        Manager
+                      </td>
+                      <td>Educational</td>
+                      <td>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-warning btn-sm">In Progress</button>
+                          <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon btn-sm"
+                            data-toggle="dropdown">
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" href="#">TODO</a>
+                            <a class="dropdown-item" href="#">In Progress</a>
+                            <a class="dropdown-item" href="#">Completed</a>
+                            <a class="dropdown-item" href="#">Not Completed</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div class="card-body">
-                <div class="d-flex">
-                  <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">357</span>
-                    <span>Leads Over Time</span>
-                  </p>
-                  <p class="ml-auto d-flex flex-column text-right">
-                    <span class="text-success">
-                      <i class="fas fa-arrow-up"></i> 25%
-                    </span>
-                    <span class="text-muted">Since last month</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-
-                <div class="position-relative mb-4">
-                  <canvas id="sales-chart" height="200"></canvas>
-                </div>
-
-                <div class="d-flex flex-row justify-content-end">
-                  <span class="mr-2">
-                    <i class="fas fa-square text-primary"></i> This year
-                  </span>
-
-                  <span>
-                    <i class="fas fa-square text-gray"></i> Last year
-                  </span>
-                </div>
-              </div>
+              <!-- /.card-body -->
             </div>
             <!-- /.card -->
-
-            <div class="card">
-              <div class="card-header border-0">
-                <h3 class="card-title">General Statistics</h3>
-              </div>
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <p class="text-success text-xl">
-                    <i class="ion ion-ios-refresh-empty"></i>
-                  </p>
-                  <p class="d-flex flex-column text-right">
-                    <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-up text-success"></i> 12%
-                    </span>
-                    <span class="text-muted">CONVERSION RATE</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-                <!-- <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                <p class="text-warning text-xl">
-                  <i class="ion ion-ios-cart-outline"></i>
-                </p>
-                <p class="d-flex flex-column text-right">
-                  <span class="font-weight-bold">
-                    <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
-                  </span>
-                  <span class="text-muted">SALES RATE</span>
-                </p>
-              </div> -->
-                <!-- /.d-flex -->
-
-              </div>
-            </div>
           </div>
 
           <!-- /.row (main row) -->
@@ -925,6 +977,9 @@
   <!-- jQuery UI 1.11.4 -->
   <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <!-- Select2 -->
+  <script src="plugins/select2/js/select2.full.min.js"></script>
+
   <script>
     $.widget.bridge('uibutton', $.ui.button)
   </script>
@@ -957,60 +1012,18 @@
   <script src="plugins/chart.js/Chart.min.js"></script>
   <script src="dist/js/pages/dashboard3.js"></script>
 
+
   <script>
     $(function () {
-      //Date range as a button
-      $('#daterange-btn').daterangepicker(
-        {
-          ranges: {
-            'Today': [moment(), moment()],
-            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-          },
-          startDate: moment().subtract(29, 'days'),
-          endDate: moment()
-        },
-        function (start, end) {
-          $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-        }
-      )
-
-
-
-
-
+      //Initialize Select2 Elements
+      $(document).ready(function () {
+        $('table tr[data-href]').click(function () {
+          window.location = $(this).data('href');
+          return false;
+        });
+      });
 
     });
-
-    document.addEventListener('click', function (e) {
-      debugger;
-      if (e.target && e.target.tagName == 'LI' && e.target.parentNode && e.target.parentNode.parentNode && e.target.parentNode.parentNode.classList && e.target.parentNode.parentNode.classList[0]) {
-
-        if (e.target.innerText != 'Custom Range') {
-          document.getElementById('daterange-btn').innerHTML = '<i class="far fa-calendar-alt"></i> ' + e.target.innerText + ' <i class="fas fa-caret-down"></i>';
-        }
-
-        else if (e.target.innerText == 'Custom Range' && document.getElementsByClassName('drp-selected').length > 0) {
-          document.getElementById('daterange-btn').innerHTML = '<i class="far fa-calendar-alt"></i> ' + document.getElementsByClassName('drp-selected')[0].innerText + ' <i class="fas fa-caret-down"></i>';
-
-        }
-        else {
-          document.getElementById('daterange-btn').innerHTML = '<i class="far fa-calendar-alt"></i> ' + e.target.innerText + ' <i class="fas fa-caret-down"></i>';
-
-        }  
-      }  
-      else if(e.target.innerText == 'Apply' && e.target && e.target.tagName == 'BUTTON'){
-        document.getElementById('daterange-btn').innerHTML = '<i class="far fa-calendar-alt"></i> ' + document.getElementsByClassName('drp-selected')[0].innerText + ' <i class="fas fa-caret-down"></i>';
-      }
-
-    });
-
-
-
-    // DropzoneJS Demo Code End
   </script>
 </body>
 

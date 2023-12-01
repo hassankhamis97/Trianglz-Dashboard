@@ -1,0 +1,7 @@
+table tr[data-href] {
+  cursor: pointer;
+}
+
+table tr[data-href]:hover {
+  background-color: gainsboro;
+}
