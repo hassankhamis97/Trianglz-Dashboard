@@ -32,6 +32,8 @@
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
   <link rel="stylesheet" href="leads.css">
+  <link rel="stylesheet" href="global.css">
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -39,7 +41,7 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+      <img class="animation__shake" src="dist/img/trianglz-logo.jfif" alt="AdminLTELogo" height="60" width="60">
     </div>
 
     <!-- Navbar -->
@@ -765,32 +767,38 @@
                 </div>
               </div>
 
-              <!-- /.card -->
-              <div class="form-group">
-                <select class="select2" multiple="multiple" data-placeholder="Select a Category" style="width: 100%;">
-                  <option>Health and Fitness</option>
-                  <option>Educational</option>
-                  <option>Food</option>
-                  <option>Shopping</option>
-                </select>
+              <div class="d-flex">
+                <div style="margin-right: 20px; margin-top: 8px;">
+                  <i class="fas fa-filter" style="font-size: large;"></i>
+                </div>
+                <!-- /.card -->
+                <div class="form-group" style="margin-right: 20px;">
+                  <select class="select2" multiple="multiple" data-placeholder="Select a Category" style="width: 100%; min-width: 200px;">
+                    <option>Health and Fitness</option>
+                    <option>Educational</option>
+                    <option>Food</option>
+                    <option>Shopping</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <select class="select2" multiple="multiple" data-placeholder="Select a Status" style="width: 100%; min-width: 200px;">
+                    <option>TODO</option>
+                    <option>In Progress</option>
+                    <option>Completed</option>
+                    <option>Not Completed</option>
+                  </select>
+                </div>
               </div>
-              <div class="form-group">
-                <select class="select2" multiple="multiple" data-placeholder="Select a Status" style="width: 100%;">
-                  <option>TODO</option>
-                  <option>In Progress</option>
-                  <option>Completed</option>
-                  <option>Not Completed</option>
-                </select>
-              </div>
+
 
             </div>
             <div class="card">
               <!-- /.card-header -->
               <div class="card-body p-0">
-                <table class="table table-sm">
+                <table class="table">
                   <thead>
                     <tr>
-                      <th style="width: 60px">#</th>
+                      <th style="width: 60px">ID</th>
                       <th>Client name</th>
                       <th>Client Job</th>
                       <th>Business category</th>
@@ -799,7 +807,7 @@
                   </thead>
                   <tbody>
                     <tr data-href="lead-profile.html">
-                      <td>1.</td>
+                      <td>1</td>
                       <td>Ahmed Abdelhafiez</td>
                       <td>
                         Entrepreneur
@@ -809,7 +817,7 @@
                       </td>
                       <td>
                         <div class="btn-group">
-                          <button type="button" class="btn btn-info btn-sm">TODO</button>
+                          <button type="button" class="btn btn-info btn-sm fixed-size">TODO</button>
                           <button type="button" class="btn btn-info dropdown-toggle dropdown-icon btn-sm"
                             data-toggle="dropdown">
                             <span class="sr-only">Toggle Dropdown</span>
@@ -824,7 +832,7 @@
                       </td>
                     </tr>
                     <tr data-href="lead-profile.html">
-                      <td>2.</td>
+                      <td>2</td>
                       <td>Hassan Khamis</td>
                       <td>
                         Manager
@@ -832,7 +840,7 @@
                       <td>Educational</td>
                       <td>
                         <div class="btn-group">
-                          <button type="button" class="btn btn-warning btn-sm">In Progress</button>
+                          <button type="button" class="btn btn-warning btn-sm fixed-size">In Progress</button>
                           <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon btn-sm"
                             data-toggle="dropdown">
                             <span class="sr-only">Toggle Dropdown</span>
@@ -847,7 +855,7 @@
                       </td>
                     </tr>
                     <tr data-href="lead-profile.html">
-                      <td>3.</td>
+                      <td>3</td>
                       <td>Hoda Amr</td>
                       <td>
                         Entrepreneur
@@ -857,7 +865,7 @@
                       </td>
                       <td>
                         <div class="btn-group">
-                          <button type="button" class="btn btn-danger btn-sm">Not Completed</button>
+                          <button type="button" class="btn btn-danger btn-sm fixed-size">Not Completed</button>
                           <button type="button" class="btn btn-danger dropdown-toggle dropdown-icon btn-sm"
                             data-toggle="dropdown">
                             <span class="sr-only">Toggle Dropdown</span>
@@ -872,7 +880,7 @@
                       </td>
                     </tr>
                     <tr data-href="lead-profile.html">
-                      <td>4.</td>
+                      <td>4</td>
                       <td>Magdy</td>
                       <td>
                         Manager
@@ -880,7 +888,7 @@
                       <td>Educational</td>
                       <td>
                         <div class="btn-group">
-                          <button type="button" class="btn btn-success btn-sm">Completed</button>
+                          <button type="button" class="btn btn-success btn-sm fixed-size">Completed</button>
                           <button type="button" class="btn btn-success dropdown-toggle dropdown-icon btn-sm"
                             data-toggle="dropdown">
                             <span class="sr-only">Toggle Dropdown</span>
@@ -895,7 +903,7 @@
                       </td>
                     </tr>
                     <tr data-href="lead-profile.html">
-                      <td>5.</td>
+                      <td>5</td>
                       <td>Nour Gweda</td>
                       <td>
                         Entrepreneur
@@ -905,7 +913,7 @@
                       </td>
                       <td>
                         <div class="btn-group">
-                          <button type="button" class="btn btn-info btn-sm">TODO</button>
+                          <button type="button" class="btn btn-info btn-sm fixed-size">TODO</button>
                           <button type="button" class="btn btn-info dropdown-toggle dropdown-icon btn-sm"
                             data-toggle="dropdown">
                             <span class="sr-only">Toggle Dropdown</span>
@@ -920,7 +928,7 @@
                       </td>
                     </tr>
                     <tr data-href="lead-profile.html">
-                      <td>6.</td>
+                      <td>6</td>
                       <td>Yara Magdy</td>
                       <td>
                         Manager
@@ -928,7 +936,7 @@
                       <td>Educational</td>
                       <td>
                         <div class="btn-group">
-                          <button type="button" class="btn btn-warning btn-sm">In Progress</button>
+                          <button type="button" class="btn btn-warning btn-sm fixed-size">In Progress</button>
                           <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon btn-sm"
                             data-toggle="dropdown">
                             <span class="sr-only">Toggle Dropdown</span>
@@ -1016,6 +1024,7 @@
   <script>
     $(function () {
       //Initialize Select2 Elements
+      $('.select2').select2()
       $(document).ready(function () {
         $('table tr[data-href]').click(function () {
           window.location = $(this).data('href');

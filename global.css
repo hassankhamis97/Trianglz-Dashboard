@@ -1,0 +1,19 @@
+
+.btn.btn-danger {
+  background-color: #d01e1e !important;
+}
+
+
+.btn.btn-warning {
+  background-color: orange !important;
+  color: white !important;
+}
+
+
+.btn.btn-info {
+  background-color: #003366 !important;
+}
+
+.btn.btn-success {
+  background-color: green !important;
+}

@@ -1,0 +1,25 @@
+.inner h3 {
+  font-size: xxx-large !important;
+  color: #003366;
+
+
+}
+
+.inner p {
+  font-size: xx-large !important;
+  color: #003366;
+
+}
+
+.small-box {
+  background-color: white !important;
+  color: #003366;
+}
+
+.primary-color {
+  color: #003366;
+}
+
+.btn .btn-danger {
+  background-color: #d01e1e;
+}

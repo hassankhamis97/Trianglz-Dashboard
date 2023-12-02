@@ -5,3 +5,8 @@ table tr[data-href] {
 table tr[data-href]:hover {
   background-color: gainsboro;
 }
+
+
+button.btn.btn-sm.fixed-size {
+  width: 150px !important;
+}
