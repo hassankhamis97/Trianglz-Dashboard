@@ -34,6 +34,8 @@
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
   <link rel="stylesheet" href="leads.css">
+  <link rel="stylesheet" href="custom-main-style.css">
+  <link rel="stylesheet" href="global.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -139,7 +141,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Leads</h1>
+              <h1 class="m-0 primary-color text-bold">Lead Overview</h1>
             </div>
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -205,8 +207,9 @@
             <div class="col-md-9">
               <div class="card-header p-0">
                 <ul class="nav nav-pills">
-                  <li class="nav-item"><a class="nav-link active" href="#business" data-toggle="tab">Business</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#insights" data-toggle="tab">Insights</a></li>
+                  <li class="nav-item"><a class="nav-link large active" href="#business" data-toggle="tab">Business</a>
+                  </li>
+                  <li class="nav-item"><a class="nav-link large" href="#insights" data-toggle="tab">Insights</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="tab-content">
@@ -347,7 +350,7 @@
                         </div>
                         <!-- timeline time label -->
                         <!-- timeline item -->
-                        <div>
+                        <!-- <div>
                           <i class="fas fa-camera bg-purple"></i>
 
                           <div class="timeline-item">
@@ -362,7 +365,7 @@
                               <img src="https://placehold.it/150x100" alt="...">
                             </div>
                           </div>
-                        </div>
+                        </div> -->
                         <!-- END timeline item -->
                         <!-- timeline item -->
                         <div>
@@ -403,22 +406,22 @@
                         <div class="card-header border-0">
                           <!--begin::Card title-->
                           <div class="card-title">
-                            <h4 style="font-weight: 600;">Global Competitors</h4>
+                            <h4 class="primary-color" style="font-weight: 600;">Global Competitors</h4>
                           </div>
                           <!--end::Card title-->
                         </div>
                         <div class="card-body pt-0 pb-3">
                           <ul class="fs-4 fw-semibold mb-6">
                             <li>
-                              <span class="text-gray-700">Project 1</span>
+                              <span class="primary-color">Project 1</span>
                             </li>
 
                             <li class="my-2">
-                              <span class="text-gray-700">Project 2</span>
+                              <span class="primary-color">Project 2</span>
                             </li>
 
                             <li>
-                              <span class="text-gray-700">Project 3</span>
+                              <span class="primary-color">Project 3</span>
                             </li>
                           </ul>
                         </div>
@@ -430,22 +433,22 @@
                         <div class="card-header border-0">
                           <!--begin::Card title-->
                           <div class="card-title">
-                            <h4 style="font-weight: 600;">Country Competitors</h4>
+                            <h4 class="primary-color" style="font-weight: 600;">Country Competitors</h4>
                           </div>
                           <!--end::Card title-->
                         </div>
                         <div class="card-body pt-0 pb-3">
                           <ul class="fs-4 fw-semibold mb-6">
                             <li>
-                              <span class="text-gray-700">Project 1</span>
+                              <span class="primary-color">Project 1</span>
                             </li>
 
                             <li class="my-2">
-                              <span class="text-gray-700">Project 2</span>
+                              <span class="primary-color">Project 2</span>
                             </li>
 
                             <li>
-                              <span class="text-gray-700">Project 3</span>
+                              <span class="primary-color">Project 3</span>
                             </li>
                           </ul>
                         </div>
@@ -459,16 +462,15 @@
 
                     <div class="col">
                       <!--begin::Reward Tier-->
-                      <a href="#" class="card bg-info hoverable h-md-100"
-                        style="background-color: #7239ea !important;">
+                      <a href="#" class="card bg-info hoverable h-md-100" style="background-color: white !important;">
                         <!--begin::Body-->
                         <div class="card-body">
-                          <i class="fas fa-award" style="font-size: xxx-large;"></i>
-                          <div class="text-white fw-bold fs-2 mt-2">
+                          <i class="fas fa-award" style="font-size: xxx-large; color: #ba8219;"></i>
+                          <div class="fw-bold fs-2 mt-2 primary-color">
                             Hassan Khamis
                           </div>
 
-                          <div class="fw-semibold text-white">
+                          <div class="text-bold primary-color" style="font-size: x-large;">
                             Fit My Culture
                           </div>
                         </div>
@@ -478,15 +480,15 @@
                     </div>
                     <div class="col">
                       <!--begin::Reward Tier-->
-                      <a href="#" class="card bg-success hoverable h-md-100">
+                      <a href="#" style="background-color: white !important;" class="card hoverable h-md-100">
                         <!--begin::Body-->
                         <div class="card-body">
-                          <i class="fas fa-stopwatch" style="font-size: xxx-large;"></i>
-                          <div class="text-white fw-bold fs-2 mt-2">
+                          <i class="fas fa-stopwatch" style="font-size: xxx-large; color: green;"></i>
+                          <div class="primary-color fw-bold fs-2 mt-2">
                             Expected duration
                           </div>
 
-                          <div class="fw-semibold text-white">
+                          <div class="text-bold primary-color" style="font-size: x-large;">
                             1 Year
                           </div>
                         </div>
@@ -494,6 +496,29 @@
                       </a>
                       <!--end::Reward Tier-->
                     </div>
+
+                    <!-- Summary -->
+                    <div class="col-md-12">
+                      <div class="card ">
+                        <div class="card-header border-0">
+                          <!--begin::Card title-->
+                          <div class="card-title">
+                            <h4 class="primary-color" style="font-weight: 600;">Set of Features</h4>
+                          </div>
+                          <!--end::Card title-->
+                        </div>
+                        <div class="card-body pt-0 pb-3">
+                          <p class="primary-color">
+                            Lorem ipsum represents a long-held tradition for designers,
+                            typographers and the like. Some people hate it and argue for
+                            its demise, but others ignore the hate as they create awesome
+                            tools to help create filler text for everyone from bacon lovers
+                            to Charlie Sheen fans.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
 

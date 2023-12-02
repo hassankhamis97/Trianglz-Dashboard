@@ -10,3 +10,18 @@ table tr[data-href]:hover {
 button.btn.btn-sm.fixed-size {
   width: 150px !important;
 }
+
+a.nav-link.large {
+  font-size: x-large;
+}
+
+
+a.nav-link.large.active {
+  font-weight: 600;
+}
+
+.timeline-header {
+  font-size: large;
+  color: #003366 !important;
+  font-weight: 600;
+}
