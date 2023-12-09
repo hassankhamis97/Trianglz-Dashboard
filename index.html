@@ -167,7 +167,7 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>50</h3>
+                  <h3 id="completed-requests"></h3>
 
                   <p>Completed Requests</p>
                 </div>
@@ -182,7 +182,7 @@
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">
-                  <h3>2</h3>
+                  <h3 id="not-completed-requests"></h3>
 
                   <p>Not Completed Requests</p>
                 </div>
@@ -198,7 +198,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>20</h3>
+                  <h3 id="todo-leads"></h3>
 
                   <p>To Do Leads</p>
                 </div>
@@ -214,7 +214,7 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3>30</h3>
+                  <h3 id="in-progress-leads"></h3>
 
                   <p>In Progress Leads</p>
                 </div>
@@ -279,7 +279,7 @@
                   </p>
                   <p class="d-flex flex-column text-right">
                     <span class="font-weight-bold"  style="font-weight: 700; font-size: xx-large;">
-                      <i class="ion ion-android-arrow-up text-success" style="font-weight: 700; font-size: xx-large;"></i> 12%
+                      <i class="ion ion-android-arrow-up text-success" style="font-weight: 700; font-size: xx-large;"></i><span id="conversion-rate"></span>
                     </span>
                     <span class="text-muted" style="font-weight: 700; font-size: x-large;">CONVERSION RATE</span>
                   </p>
@@ -321,6 +321,23 @@
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
+
+  <script>
+    window.onload = async () => {
+      const analyticsRequest = await fetch("http://localhost:3000/api/system_report");
+      const analyticsResponse = await analyticsRequest.json();
+      const completedRequests = document.getElementById("completed-requests");
+      const notCompletedRequests = document.getElementById("not-completed-requests");
+      const todoLeads = document.getElementById("todo-leads");
+      const inProgressLeads = document.getElementById("in-progress-leads");
+      const conversionRate = document.getElementById("conversion-rate");
+      completedRequests.innerText = analyticsResponse?.completed
+      notCompletedRequests.innerText = analyticsResponse?.not_completed
+      inProgressLeads.innerText = analyticsResponse?.in_progress
+      todoLeads.innerText = analyticsResponse?.to_do
+      conversionRate.innerText = analyticsResponse?.conversion_rate
+    }
+  </script>
 
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>

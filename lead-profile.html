@@ -539,9 +539,10 @@
       const  insightCompGlobal = document.getElementsByClassName(" insight-comp-global");
       const  insightCompLocal = document.getElementsByClassName(" insight-comp-local");
       const  insightFeatures = document.getElementsByClassName(" insight-features");
-      // replace with user_id
-      const userReportRequest = await fetch("http://localhost:3000/api/user_report?user_id=" + 2);
-      const userInsightsRequest = await fetch("http://localhost:3000/api/user_insights?user_id=" + 2);
+      const urlParams = new URLSearchParams(window.location.search);
+      const leadId = urlParams.get("lead_id");
+      const userReportRequest = await fetch("http://localhost:3000/api/user_report?user_id=" + leadId);
+      const userInsightsRequest = await fetch("http://localhost:3000/api/user_insights?user_id=" + leadId);
       const userReportResponse = await userReportRequest.json();
       const userInsightsResponse = await userInsightsRequest.json();
       [...leadName].forEach(element => {

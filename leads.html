@@ -199,155 +199,11 @@
                       <th style="width: 60px">ID</th>
                       <th>Client name</th>
                       <th>Client Job</th>
-                      <th>Business category</th>
+                      <th>Email</th>
                       <th>Lead Status</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr data-href="lead-profile.html">
-                      <td>1</td>
-                      <td>Ahmed Abdelhafiez</td>
-                      <td>
-                        Entrepreneur
-                      </td>
-                      <td>
-                        Health and Fitness
-                      </td>
-                      <td>
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-info btn-sm fixed-size">TODO</button>
-                          <button type="button" class="btn btn-info dropdown-toggle dropdown-icon btn-sm"
-                            data-toggle="dropdown">
-                            <span class="sr-only">Toggle Dropdown</span>
-                          </button>
-                          <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="#">TODO</a>
-                            <a class="dropdown-item" href="#">In Progress</a>
-                            <a class="dropdown-item" href="#">Completed</a>
-                            <a class="dropdown-item" href="#">Not Completed</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr data-href="lead-profile.html">
-                      <td>2</td>
-                      <td>Hassan Khamis</td>
-                      <td>
-                        Manager
-                      </td>
-                      <td>Educational</td>
-                      <td>
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-warning btn-sm fixed-size">In Progress</button>
-                          <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon btn-sm"
-                            data-toggle="dropdown">
-                            <span class="sr-only">Toggle Dropdown</span>
-                          </button>
-                          <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="#">TODO</a>
-                            <a class="dropdown-item" href="#">In Progress</a>
-                            <a class="dropdown-item" href="#">Completed</a>
-                            <a class="dropdown-item" href="#">Not Completed</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr data-href="lead-profile.html">
-                      <td>3</td>
-                      <td>Hoda Amr</td>
-                      <td>
-                        Entrepreneur
-                      </td>
-                      <td>
-                        Health and Fitness
-                      </td>
-                      <td>
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-danger btn-sm fixed-size">Not Completed</button>
-                          <button type="button" class="btn btn-danger dropdown-toggle dropdown-icon btn-sm"
-                            data-toggle="dropdown">
-                            <span class="sr-only">Toggle Dropdown</span>
-                          </button>
-                          <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="#">TODO</a>
-                            <a class="dropdown-item" href="#">In Progress</a>
-                            <a class="dropdown-item" href="#">Completed</a>
-                            <a class="dropdown-item" href="#">Not Completed</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr data-href="lead-profile.html">
-                      <td>4</td>
-                      <td>Magdy</td>
-                      <td>
-                        Manager
-                      </td>
-                      <td>Educational</td>
-                      <td>
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-success btn-sm fixed-size">Completed</button>
-                          <button type="button" class="btn btn-success dropdown-toggle dropdown-icon btn-sm"
-                            data-toggle="dropdown">
-                            <span class="sr-only">Toggle Dropdown</span>
-                          </button>
-                          <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="#">TODO</a>
-                            <a class="dropdown-item" href="#">In Progress</a>
-                            <a class="dropdown-item" href="#">Completed</a>
-                            <a class="dropdown-item" href="#">Not Completed</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr data-href="lead-profile.html">
-                      <td>5</td>
-                      <td>Nour Gweda</td>
-                      <td>
-                        Entrepreneur
-                      </td>
-                      <td>
-                        Health and Fitness
-                      </td>
-                      <td>
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-info btn-sm fixed-size">TODO</button>
-                          <button type="button" class="btn btn-info dropdown-toggle dropdown-icon btn-sm"
-                            data-toggle="dropdown">
-                            <span class="sr-only">Toggle Dropdown</span>
-                          </button>
-                          <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="#">TODO</a>
-                            <a class="dropdown-item" href="#">In Progress</a>
-                            <a class="dropdown-item" href="#">Completed</a>
-                            <a class="dropdown-item" href="#">Not Completed</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr data-href="lead-profile.html">
-                      <td>6</td>
-                      <td>Yara Magdy</td>
-                      <td>
-                        Manager
-                      </td>
-                      <td>Health and Fitness</td>
-                      <td>
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-info btn-sm fixed-size">TODO</button>
-                          <button type="button" class="btn btn-info dropdown-toggle dropdown-icon btn-sm"
-                            data-toggle="dropdown">
-                            <span class="sr-only">Toggle Dropdown</span>
-                          </button>
-                          <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="#">TODO</a>
-                            <a class="dropdown-item" href="#">In Progress</a>
-                            <a class="dropdown-item" href="#">Completed</a>
-                            <a class="dropdown-item" href="#">Not Completed</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
+                  <tbody id="leads-list">
                   </tbody>
                 </table>
               </div>
@@ -377,6 +233,43 @@
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
+
+  <script>
+    window.onload = async () => {
+      const leadsList = document.getElementById("leads-list");
+      const leadsListRequest = await fetch("http://localhost:3000/api/users");
+      const leadsListResponse = await leadsListRequest.json();
+      const leads = ``;
+      leadsListResponse?.forEach((lead) => {
+        leads += ` <tr data-href="lead-profile.html?lead_id=${lead?.id}">
+                      <td>1</td>
+                      <td>${lead?.name}</td>
+                      <td>
+                        ${lead?.title}
+                      </td>
+                      <td>
+                        ${lead?.email}
+                      </td>
+                      <td>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info btn-sm fixed-size">${lead?.status}</button>
+                          <button type="button" class="btn btn-info dropdown-toggle dropdown-icon btn-sm"
+                            data-toggle="dropdown">
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" href="#">TODO</a>
+                            <a class="dropdown-item" href="#">In Progress</a>
+                            <a class="dropdown-item" href="#">Completed</a>
+                            <a class="dropdown-item" href="#">Not Completed</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>`
+        })
+        leadsList.innerHTML = leads;
+    }
+  </script>
 
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>
